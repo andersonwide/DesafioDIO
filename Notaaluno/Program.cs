@@ -4,11 +4,11 @@ namespace Notaaluno
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[]args)
         {
             //declare suas variaveis corretamente
             float calcular = 1;
-            double[] notaAluno = { 0, 0 };
+            double[] notaAluno = new double[2];
             double res;
             //continue a solução ou implemente da sua maneira
 
@@ -28,8 +28,7 @@ namespace Notaaluno
                 {
                     res = (notaAluno[0] + notaAluno[1]) / 2;
 
-                    Console.Write("media = " + res);
-                    Console.WriteLine(res.ToString("N2"));
+                    Console.WriteLine("media = " + res.ToString("N2"));
                     Console.WriteLine("novo calculo (1-sim 2-nao)");
                     calcular = float.Parse(Console.ReadLine());
                         while (calcular != 1 && calcular != 2)
