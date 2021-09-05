@@ -15,29 +15,27 @@ namespace Notaaluno
             while (calcular == 1)
             {
                 notaAluno[0] = double.Parse(Console.ReadLine());
+                while( notaAluno[0]<0 || notaAluno[0]>10)
+                {
+                    Console.WriteLine("nota invalida");
+                    notaAluno[0] = double.Parse(Console.ReadLine());
+                }
                 notaAluno[1] = double.Parse(Console.ReadLine());
-                if (notaAluno[0] < 0 || notaAluno[0] > 10)
+                while (notaAluno[1] < 0 || notaAluno[1] > 10)
                 {
                     Console.WriteLine("nota invalida");
+                    notaAluno[1] = double.Parse(Console.ReadLine());
                 }
-                else if (notaAluno[1] < 0 || notaAluno[1] > 10)
+                res = (notaAluno[0] + notaAluno[1]) / 2;
+                Console.WriteLine("media = " + res.ToString("N2"));
+                Console.WriteLine("novo calculo (1-sim 2-nao)");
+                calcular = float.Parse(Console.ReadLine());
+                while (calcular != 1 && calcular != 2)
                 {
-                    Console.WriteLine("nota invalida");
-                }
-                else
-                {
-                    res = (notaAluno[0] + notaAluno[1]) / 2;
-
-                    Console.WriteLine("media = " + res.ToString("N2"));
                     Console.WriteLine("novo calculo (1-sim 2-nao)");
                     calcular = float.Parse(Console.ReadLine());
-                        while (calcular != 1 && calcular != 2)
-                        {
-                            Console.WriteLine("novo calculo (1-sim 2-nao)");
-                            calcular = float.Parse(Console.ReadLine());
-                        }
+                }
                 }
             }
         }
     }
-}
